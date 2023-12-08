@@ -21,7 +21,6 @@ const Navbar = () => {
                 >
                   Search
                 </Link>
-                {/* Add more links here if needed */}
               </div>
             </div>
           </div>

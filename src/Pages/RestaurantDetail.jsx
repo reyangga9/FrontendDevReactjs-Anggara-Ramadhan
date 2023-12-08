@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
+import { Star } from "lucide-react";
 
-const RestaurantById = () => {
+const RestaurantDetail = () => {
   const [restaurant, setRestaurant] = useState(null);
   const [error, setError] = useState(null);
 
   const fetchRestaurantById = async () => {
-    const path = window.location.pathname; // Get the current path
-    const id = path.substr(1); // Extract the ID from the path
+    const path = window.location.pathname;
+    const id = path.substr(1);
     try {
       const response = await axios.get(
         `https://restaurant-api.dicoding.dev/detail/${id}`
@@ -60,24 +61,32 @@ const RestaurantById = () => {
         </div>
         <div className="text-lg mb-6">
           <h2 className="font-semibold">Menus:</h2>
-          <div>
-            <h3 className="font-semibold">Foods:</h3>
-            <ul>
-              {restaurant.menus.foods.map((food, index) => (
-                <li key={index}>{food.name}</li>
-              ))}
-            </ul>
-            <h3 className="font-semibold">Drinks:</h3>
-            <ul>
-              {restaurant.menus.drinks.map((drink, index) => (
-                <li key={index}>{drink.name}</li>
-              ))}
-            </ul>
+          <div className="flex justify-around">
+            <div>
+              <h3 className="font-semibold ">Foods:</h3>
+              <ul className="">
+                {restaurant.menus.foods.map((food, index) => (
+                  <li key={index}>{food.name}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold">Drinks:</h3>
+              <ul>
+                {restaurant.menus.drinks.map((drink, index) => (
+                  <li key={index}>{drink.name}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="text-lg mb-6">
-          <h2 className="font-semibold">Rating:</h2>
-          <p>{restaurant.rating}</p>
+          <h2 className="font-semibold flex">Rating:</h2>
+
+          <div className="flex items-center gap-2">
+            <Star size={20} fill="yellow" className="text-yellow-500" />
+            <span className="text-md font-semibold">{restaurant.rating}</span>
+          </div>
         </div>
         <div className="text-lg mb-6">
           <h2 className="font-semibold">Customer Reviews:</h2>
@@ -96,4 +105,4 @@ const RestaurantById = () => {
   );
 };
 
-export default RestaurantById;
+export default RestaurantDetail;

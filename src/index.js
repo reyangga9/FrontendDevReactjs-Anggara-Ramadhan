@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import SearchRestaurant from "./Pages/SearchRestaurant";
-import RestaurantById from "./Pages/RestaurantById";
+import RestaurantDetail from "./Pages/RestaurantDetail";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/:id",
-    element: <RestaurantById />,
+    element: <RestaurantDetail />,
   },
 ]);
 

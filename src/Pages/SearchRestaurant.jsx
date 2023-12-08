@@ -8,24 +8,23 @@ const SearchRestaurant = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState(null);
 
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(
-        `https://restaurant-api.dicoding.dev/search?q=${searchQuery}`
-      );
-      setSearchResults(response.data.restaurants);
-    } catch (error) {
-      setError("Error fetching data");
-    }
-  };
-
   useEffect(() => {
+    const handleSearch = async () => {
+      try {
+        const response = await axios.get(
+          `https://restaurant-api.dicoding.dev/search?q=${searchQuery}`
+        );
+        setSearchResults(response.data.restaurants);
+      } catch (error) {
+        setError("Error fetching data");
+      }
+    };
     if (searchQuery.trim() !== "") {
       handleSearch();
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery]);
+  }, [searchQuery]); // Include searchQuery in the dependency array
 
   return (
     <div>

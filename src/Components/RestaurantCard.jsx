@@ -1,6 +1,7 @@
 // Restaurant.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Star } from "lucide-react";
 
 const RestaurantCard = ({ restaurant }) => {
   const navigate = useNavigate();
@@ -18,12 +19,15 @@ const RestaurantCard = ({ restaurant }) => {
         />
       </div>
       <p>{restaurant.name}</p>
-      <p>Rating: {restaurant.rating}</p>
+      <div className="flex items-center gap-2">
+        <Star size={20} fill="yellow" className="text-yellow-500" />
+        <span className="text-md font-semibold">{restaurant.rating}</span>
+      </div>
       <button
         onClick={() => handleButtonClick(restaurant.id)}
         className="mt-5 py-2 text-white w-full mx-auto bg-blue-900"
       >
-        Learn More
+        LEARN MORE
       </button>
     </div>
   );
