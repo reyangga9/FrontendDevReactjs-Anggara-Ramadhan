@@ -20,3 +20,6 @@
 3. Filter By Rating
 4. Clear Filtering
 5. Search Restaurants
+
+### Netlifly 
+`https://eloquent-sopapillas-14fbea.netlify.app/`
