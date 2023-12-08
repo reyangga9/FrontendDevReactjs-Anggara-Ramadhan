@@ -4,8 +4,8 @@
 
 ### Langkah-langkah Instalasi
 
-1. Clone repositori ini: `git clone https://github.com/nama-user/nama-repositori.git`
-2. Masuk ke direktori proyek: `cd nama-repositori`
+1. Clone repositori ini: `git clone https://github.com/reyangga9/FrontendDevReactjs-Anggara-Ramadhan`
+2. Masuk ke direktori proyek: `cd namaDirektori`
 3. Install dependensi: `npm install`
 
 ### Cara Menjalankan Proyek
